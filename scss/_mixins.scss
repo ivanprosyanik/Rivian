@@ -26,7 +26,7 @@
 // Функція для гнучких розмірів будь-чого. Margin, padding і тд. Визиваєтсья написанням "size()", де потрібний розрахунок розміру
 // У дужки вносимо спочатку максимальне значення розміру (Наприклад: "margin", "padding"), потім мінімальне. 
 
-@function size($max, $min, $wmax: 1920, $wmin: 375) {
+@function size($max, $min, $wmax: 1600, $wmin: 375) {
   $size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$wmin}px) / (#{$wmax} - #{$wmin})));
   @return $size;
 }

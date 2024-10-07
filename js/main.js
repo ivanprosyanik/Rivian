@@ -21,6 +21,14 @@ let carsSwiper = new Swiper(".cars__swiper", {
     delay: 5000,
     disableOnInteraction: false,
   },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    577: {
+      slidesPerView: 2,
+    }
+  },
 });
 
 const video = document.getElementById('video');
@@ -48,7 +56,6 @@ video.addEventListener('mouseleave', () => {
 video.addEventListener('click', function () { cursor(video) });
 
 const photosSwiper = new Swiper(".photos__swiper", {
-  horizontal: true,
   effect: 'fade',
   loop: true,
   autoplay: {

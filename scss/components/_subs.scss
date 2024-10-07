@@ -1,5 +1,5 @@
 .subs {
-  padding: 50px 16px;
+  padding: size(50, 20) size(16, 10);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -8,13 +8,22 @@
   &__wrapper {
     display: flex;
     align-items: center;
-    gap: 0 78px;
+    gap: 0 size(78, 38);
+    
+    @include r($tablet) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__title {
     max-width: 370px;
     font-weight: 400;
-    font-size: 24px;
+    font-size: size(24, 20);
+
+    @include r($phone) {
+      text-align: center;
+    }
   }
 
   &__form {

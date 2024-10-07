@@ -1,19 +1,31 @@
 .footer {
-  padding: 80px 16px 50px;
+  padding: size(80,40) 16px size(50,30);
   background-color: #A15842;
   color: #fff;
 
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
+    @include r($phone) {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
   }
 
   &__item {
-    margin-bottom: 120px;
+    margin-bottom: size(120, 50);
+
+    @include r($phone) {
+      &:nth-child(2),
+      &:nth-child(4) {
+        text-align: right;
+      }
+    }
   }
 
   &-list__bold {
-    font-size: 24px;
+    font-size: size(24, 18);
   }
 
   &-list__bold,
@@ -27,6 +39,10 @@
     justify-content: flex-start;
     gap: 0 12px;
 
+    @include r($phone) {
+      justify-content: flex-end;
+    }
+
     &::before {
       order: 2;
       background-color: #fff;
@@ -38,6 +54,10 @@
     justify-content: flex-end;
     gap: 0 5px;
     margin-bottom: 55px;
+
+    @include r($phone) {
+      justify-content: center;
+    }
   }
 
   &__social-link {
@@ -49,10 +69,15 @@
   &__info-list {
     display: flex;
     align-items: center;
-    gap: 0 50px;
+    gap: 0 size(50, 20);
     font-size: 10px;
     p {
-      width: 210px;
+      max-width: 210px;
+    }
+
+    @include r($phone) {
+      flex-direction: column;
+      gap: 10px;
     }
   }
 
