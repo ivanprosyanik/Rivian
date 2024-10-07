@@ -55,4 +55,11 @@
       width: 210px;
     }
   }
+
+  a {
+    transition: color .3s ease-in-out;
+    &:hover {
+      color: #c9c9c9;
+    }
+  }
 }

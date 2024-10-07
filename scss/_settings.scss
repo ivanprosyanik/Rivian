@@ -97,7 +97,7 @@ a {
   padding: 10px 20px;
   display: inline-block;
   text-decoration: none;
-  transition: background-color .3s ease-in-out, color .3s ease-in-out, outline .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out, outline-color .3s ease-in-out;
 
   &--fill {
     background-color: #151515;
@@ -113,5 +113,10 @@ a {
   &--stroke {
     outline: 1px solid #151515;
     color: #000;
+
+    &:hover {
+      color: #c9c9c9;
+      outline-color: #c9c9c9;
+    }
   }
 }
