@@ -2,8 +2,8 @@
   color: #fff;
 
   &__swiper {
-    width: 100svw;
-    min-height: 100svh;
+    width: 100dvw;
+    min-height: 100dvh;
 
     &-wrapper {
       display: flex;
@@ -16,8 +16,8 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      width: 100svw;
-      height: 100svh;
+      width: 100dvw;
+      height: 100dvh;
       flex: 1 0 auto;
       position: relative;
     }
@@ -28,10 +28,4 @@
       bottom: 40px;
     }
   }
-
-  // &__by {
-  //   position: absolute;
-  //   bottom: 40px;
-  //   left: 24px;
-  // }
 }

@@ -36,16 +36,16 @@ const video = document.getElementById('video');
 function cursor(e) {
   if (e.paused) {
     e.play();
-    document.body.style.cursor = 'url(../images/icon-pause.svg), auto';  // Если видео на паузе, запускаем его
+    document.body.style.cursor = 'url(./images/icon-pause.svg), auto';  // Если видео на паузе, запускаем его
   } else {
     e.pause(); // Если видео воспроизводится, ставим на паузу
-    document.body.style.cursor = 'url(../images/icon-play.svg), auto';
+    document.body.style.cursor = 'url(./images/icon-play.svg), auto';
   }
 }
 
 video.addEventListener('mouseenter', () => {
   if (video.paused) {
-    document.body.style.cursor = 'url(../images/icon-play.svg), auto';
+    document.body.style.cursor = 'url(./images/icon-play.svg), auto';
   }
 });
 
@@ -54,6 +54,22 @@ video.addEventListener('mouseleave', () => {
 })
 
 video.addEventListener('click', function () { cursor(video) });
+
+function toggleVideoControls() {
+  const isMobile = window.innerWidth <= 768; // Здесь 768px — пример ширины для мобильных устройств
+
+  if (isMobile) {
+    video.setAttribute('controls', true);
+  } else {
+    video.removeAttribute('controls');
+  }
+}
+
+// Запускаем проверку при загрузке страницы
+window.addEventListener('load', toggleVideoControls);
+
+// И при изменении размера окна (например, при повороте экрана)
+window.addEventListener('resize', toggleVideoControls);
 
 const photosSwiper = new Swiper(".photos__swiper", {
   effect: 'fade',
