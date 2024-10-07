@@ -1,0 +1,10 @@
+// Пример подключение шрифтов:
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Rubik-Regular'),
+    url('../fonts/Roboto-Regular.woff2') format('woff2');
+  font-display: swap;
+}

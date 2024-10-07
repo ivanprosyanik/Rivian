@@ -1,0 +1,110 @@
+.stories {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 120px 104px;
+  }
+
+  &__info {
+    width: 50%;
+  }
+
+  &__title {
+    font-size: 44px;
+    max-width: 268px;
+    margin-bottom: 75px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 75px 0;
+    max-width: 356px;
+    margin-bottom: 55px;
+    list-style: none;
+    counter-reset: my-counter; // Create a counter.
+  }
+
+  &__item {
+    counter-increment: my-counter;
+    position: relative;
+
+    &::before {
+      content: counter(my-counter, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: -20px;
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    justify-content: space-between;
+    gap: 0 45px;
+    text-decoration: none;
+    font-size: 21px;
+    color: inherit;
+    position: relative;
+    padding-bottom: 10px;
+
+    &::before {
+      order: 2;
+      background-color: #fff;
+      transition: background-color .5s ease-in-out;
+    }
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: lineSmall 1s forwards alternate;
+    }
+
+    &:hover {
+      &::after {
+        animation: lineGrow 1s forwards alternate;
+      }
+
+      &::before {
+        background-color: #000;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 20px 50px;
+  }
+
+  &__bg {
+    width: 50%;
+    min-height: 706px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes lineSmall {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}

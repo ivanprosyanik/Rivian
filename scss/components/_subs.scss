@@ -1,0 +1,39 @@
+.subs {
+  padding: 50px 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../images/subs-bg.jpg);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0 78px;
+  }
+
+  &__title {
+    max-width: 370px;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+  }
+
+  &__field {
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    width: 220px;
+  }
+
+  &__btn {
+    &::before {
+      opacity: 0.3;
+    }
+  }
+}
